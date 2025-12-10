@@ -36,7 +36,7 @@ async function run() {
   await userRepo.createQueryBuilder().delete().execute();
 
   // Users
-  const admin = userRepo.create({ name: 'Admin', email: 'admin@tech.com', password: "123456789", role: 'admin' });
+  const admin = userRepo.create({ name: 'Admin', email: 'admin@tech.com', password: '123456789', role: 'admin' });
   const tech = userRepo.create({ name: 'Tech', email: 'tech@tech.com', password: await bcrypt.hash('password', 10), role: 'technician' });
   const clientUser = userRepo.create({ name: 'Client', email: 'client@tech.com', password: await bcrypt.hash('password', 10), role: 'client' });
 

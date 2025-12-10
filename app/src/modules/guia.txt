@@ -15,3 +15,10 @@ user:
   "password": "123456789",
   "role": "admin"
 }
+
+categorias
+{
+  "title": "Solicitud",
+  "description": "no funciona",
+  "status": "open"
+}
