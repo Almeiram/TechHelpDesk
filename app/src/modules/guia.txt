@@ -1,0 +1,2 @@
+Decorador personalizado:
+Un decorador personalizado te permite crear tu propia “anotación” reutilizable que hace algo automáticamente.

@@ -40,7 +40,6 @@ export class DatabaseModule implements OnModuleInit {
 
     async onModuleInit() {
         try {
-            // No volver a inicializar, solo probar una consulta
             await this.dataSource.query('SELECT 1');
             this.logger.log(' Database connection established successfully.');
         } catch (err) {

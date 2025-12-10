@@ -1,6 +1,7 @@
 import { ExceptionFilter, Catch, ArgumentsHost, HttpException, HttpStatus } from '@nestjs/common';
 import { Request, Response } from 'express';
 
+// It captures any HTTP exceptions thrown in the controllers and formats the error response.
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
   catch(exception: unknown, host: ArgumentsHost) {
@@ -17,9 +18,6 @@ export class HttpExceptionFilter implements ExceptionFilter {
       if (typeof exc === 'string') {
         responseBody.message = exc;
       } else if (typeof exc === 'object' && exc !== null) {
-        // Try to extract message and errors if provided
-        // exc can be { message: string | string[], error?: any }
-        // or a validation object
         const anyExc: any = exc;
         responseBody.message = anyExc.message || responseBody.message;
         responseBody.error = anyExc.error || null;
