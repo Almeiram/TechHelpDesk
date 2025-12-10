@@ -12,7 +12,9 @@ async function bootstrap() {
     .setTitle('TechHelpDesk API')
     .setDescription('API documentation for the TechHelpDesk application')
     .setVersion('1.0')
-    .addBearerAuth()
+    .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT', in: 'header', name: 'Authorization' },
+    'access-token'
+  )
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);

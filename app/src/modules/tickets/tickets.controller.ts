@@ -5,7 +5,9 @@ import { UpdateTicketDto } from './dto/update-ticket.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { RolesGuard } from '../../common/guards/roles/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiBearerAuth('access-token')
 @Controller('tickets')
 @UseGuards(AuthGuard('jwt'), RolesGuard)
 export class TicketsController {

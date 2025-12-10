@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { TechniciansService } from './technicians.service';
 import { CreateTechnicianDto } from './dto/create-technician.dto';
 import { UpdateTechnicianDto } from './dto/update-technician.dto';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiBearerAuth('access-token')
 @Controller('technicians')
 export class TechniciansController {
   constructor(private readonly techniciansService: TechniciansService) {}
