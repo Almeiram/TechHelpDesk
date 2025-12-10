@@ -5,7 +5,9 @@ import { UpdateCategoryDto } from './dto/update-category.dto';
 import { AuthGuard } from '@nestjs/passport';
 import { RolesGuard } from '../../common/guards/roles/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiBearerAuth('access-token')
 @Controller('categories')
 @UseGuards(AuthGuard('jwt'), RolesGuard)
 @Roles('admin')
