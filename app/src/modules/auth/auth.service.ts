@@ -3,6 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
 import { UsersService } from '../users/users.service';
 
+// decorator who sets a standard for the AuthService
 @Injectable()
 export class AuthService {
   constructor(private usersService: UsersService, private jwtService: JwtService) {}
